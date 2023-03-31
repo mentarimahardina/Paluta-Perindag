@@ -14,10 +14,10 @@ class ModelProduk extends Model
         'image',
         'deskripsi',
         'type',
-        'location',
-        'rating',
         'created_at',
         'created_by',
+        'updated_at',
+        'updated_by',
         
     ];
 }

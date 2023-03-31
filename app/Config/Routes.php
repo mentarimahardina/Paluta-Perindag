@@ -64,7 +64,7 @@ $routes->get('/slider', 'Page::slider');
 $routes->get('/pesan', 'Page::pesan');
 $routes->get('/poling', 'Page::poling');
 $routes->get('/logs', 'Page::logs');
-$routes->get('/infoit', 'Page::infoit');
+$routes->post('produk', 'Page::produk');
 
 $routes->post('auth', 'Fungsi::auth');
 $routes->post('changepass', 'Fungsi::changepass');

@@ -95,19 +95,7 @@
 
 <body>
     <div class="fixed-top">
-        <div class="pb-2" id='topheader'>
-            <a href="<?= base_url() ?>">
-                <img height="44" title="Logo" src="<?= base_url('Assets/settings/' . $setting_logo) ?>">
-                <h6>
-                    <h5>
-                        <?= $setting_title ?>
-                    </h5>
-                    <?= $setting_subtitle ?>
-                </h6>
-            </a>
-        </div>
-
-        <div id="menu">
+       <div id="menu">
             <ul>
                 <li class="menu-toggle w-100">
                     <div class="row">

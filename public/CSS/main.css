@@ -111,6 +111,15 @@ body li.menu-item a {
   height: 100vh;
 }
 
+.carousel-caption {
+  position: absolute;
+  right: auto;
+  top: 35%;
+  left: 10%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 li.menu-item.active,
 li.menu-item.active a {
   background-color: rgb(68, 204, 133);
@@ -133,7 +142,11 @@ header .logo {
 
 body .title {
   margin: 1vh 0;
-  text-align: center;
+  text-align: left;
+}
+body .subtitle {
+  margin: 1vh 0;
+  text-align: left;
 }
 
 body .title h5,

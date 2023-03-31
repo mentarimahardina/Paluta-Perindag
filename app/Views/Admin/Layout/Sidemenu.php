@@ -55,9 +55,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="<?= base_url('/produk') ?>"
-                        class="nav-link <?php if ($page == 'Wisata') { ?> active<?php } ?>">
+                        class="nav-link <?php if ($page == 'Produk') { ?> active<?php } ?>">
                         <i class="nav-icon fas fa-gopuram"></i>
-                        <p>Wisata </p>
+                        <p>Produk </p>
                     </a>
                 </li>
                 <li class="nav-item">

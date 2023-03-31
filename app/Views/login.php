@@ -38,7 +38,7 @@
                 <div class="card-body p-0">
 
                   <div class="p-4" style="background-color: #e9e3e3;border-style: solid;border-color: #e9e3e3;">
-                    <h4 class="login-box-msg"><b>OPD</b> Admin</h4>
+                    <h4 class="login-box-msg"><b>MASUK</b></h4>
                     <?php if (session()->getFlashdata('msg')) : ?>
                       <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
                     <?php endif; ?>

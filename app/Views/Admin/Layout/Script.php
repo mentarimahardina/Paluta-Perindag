@@ -1,7 +1,19 @@
 <script>
     $(document).ready(function () {
+        
         var lihat = '';
         $("#message").text('ip_pesan');
+        $("#message").text('ip_pesan');
+        
+        $(document).on('change', '#editproduk_images', function () {
+            
+            $('#editproduk_image').attr('src', $('#editproduk_images').val());
+        })
+        $(document).on('change', '#produk_images', function () {
+            
+            $('#produk_image').attr('src', $('#produk_images').val());
+        })
+
         $(document).on('click', '#backAll', function () {
             lihat = '';
             document.getElementById('tbPesan1').hidden = false;
@@ -251,7 +263,7 @@
             var post_categories = $(this).data('price').split(', ');
             var deskripsi = $(this).data('deskripsi');
             var images = $(this).data('image');
-            var image = images != '' ? 'Assets/produk/' + images : '';
+            var image = images != '' ?  images : '';
             if (image == '') {
                 document.getElementById('editproduk_image').hidden = true;
             }
@@ -261,13 +273,40 @@
             $('#editproduk_price').val(post_categories);
             $('#editproduk_pricesales').val(pricesales);
             $('#editproduk_rating').val(rating);
-            $('#editproduk_deskripsi').summernote('code', deskripsi);
+            $('#editproduk_deskripsi').val(deskripsi);
             $('#editproduk_imageslama').val(images);
             $('#editproduk_image').attr('src', image);
             $('#editproduk_images').val(images);
             for (var i = 0; i < post_categories.length; i++) {
                 $('#editproduk_categories[value="' + post_categories[i] + '"]').prop('checked', 'checked');
             }
+        })
+
+        $(document).on('click', '#produkprice', function () {
+            var id = $(this).data('id');
+            var name = $(this).data('name');
+            // var price = $(this).data('price');
+            // var pricesales = $(this).data('pricesales');
+            // var rating = $(this).data('rating');
+            // var post_categories = $(this).data('price').split(', ');
+            // var deskripsi = $(this).data('deskripsi');
+            var images = $(this).data('image');
+            var image = images != '' ?  images : '';
+            if (image == '') {
+                document.getElementById('imageid_produkprice').hidden = true;
+            }
+
+            $('#title_produkprice').text('Perbaharui Harga - '+name);
+            $('#id_produkprice').val(id);
+            // $('#editproduk_pricesales').val(pricesales);
+            // $('#editproduk_rating').val(rating);
+            // $('#editproduk_deskripsi').val(deskripsi);
+            // $('#editproduk_imageslama').val(images);
+            $('#imageid_produkprice').attr('src', image);
+            // $('#editproduk_images').val(images);
+            // for (var i = 0; i < post_categories.length; i++) {
+            //     $('#editproduk_categories[value="' + post_categories[i] + '"]').prop('checked', 'checked');
+            // }
         })
 
         $(document).on('click', '#produkdel', function () {
@@ -570,7 +609,7 @@
         $('#eventsummernote').summernote();
         $('#produk_deskripsi').summernote();
         // $('#editproduk_deskripsi').summernote();
-
+        
         $('#tbNews').DataTable({
             "paging": true,
             "lengthChange": false,
@@ -661,6 +700,9 @@
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
+                document.getElementById('produk_image').hidden = false;
+                $('#produk_images')
+                    .attr('src', e.target.result);
                 $('#produk_image')
                     .attr('src', e.target.result);
             };
@@ -673,6 +715,8 @@
             reader.onload = function (e) {
                 document.getElementById('editproduk_image').hidden = false;
                 $('#editproduk_images')
+                    .attr('src', e.target.result);
+                    $('#editproduk_imageslama')
                     .attr('src', e.target.result);
                 $('#editproduk_image')
                     .attr('src', e.target.result);

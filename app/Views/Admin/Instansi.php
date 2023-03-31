@@ -19,9 +19,10 @@
         <div class="card-header">
           <h3>Kantor</h3>
         </div>
-
-        
-
+        <div class="mb-3 center">
+          <input type="file" accept="image/png, image/jpeg" name="kantor_foto" onchange="readURLkantorfoto(this)" class="form-control-file border">
+          <img id="kantorfoto" name="kantorfoto" src="<?= $kantor_foto == '' ? 'https://via.placeholder.com/300/b9acac/FFFFFF?text=Masukkan Gambar' : $kantor_foto ?>" class="img-fluid mb-2" height="360" />
+        </div>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -118,17 +119,26 @@
         </div>
       </blockquote>
       <blockquote>
+      <div class="card-header">
+          <h3>Tugas Pokok & Fungsi</h3>
+        </div>
 
-        <div class="card-header">
-          <h3>Dokumen Pendukung</h3>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Tugas Pokok</label>
+          <textarea type="text" id="tugaspokok" name="tugaspokok" class="form-control" > <?= $tugas_pokok ?></textarea>
         </div>
         <div class="form-group">
+          <label for="exampleInputEmail1">Fungsi</label>
+          <textarea type="text" id="tugasfungsi" name="tugasfungsi" class="form-control"><?= $tugas_fungsi ?></textarea>
+        </div>
+        <!-- <div class="form-group">
         <label for="exampleInputFile">SERTIFIKAT PENDAFTARAN PENDIRIAN BADAN HUKUM </label><br>
         <div class="mb-3 center">
           <input type="file" accept="application/pdf" name="kantor_foto" onchange="readURLkantorfoto(this)" class="form-control-file border">
           <iframe id="kantorfoto" name="kantorfoto" src="<?= $kantor_foto?>" style="width:70vw;height:70vh"></iframe>
        </div>
-        </div>
+        </div> -->
       </blockquote>
 
 

@@ -1,0 +1,30 @@
+CRITICAL - 2023-03-23 10:47:51 --> Unclosed '{' on line 29
+in APPPATH\Views\Public\HomePage.php on line 215.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Public/HomePage', [], true)
+ 3 APPPATH\Controllers\Publics.php(64): view('Public/HomePage', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Publics->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Publics))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-23 10:48:14 --> Unclosed '{' on line 29
+in APPPATH\Views\Public\HomePage.php on line 216.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Public/HomePage', [], true)
+ 3 APPPATH\Controllers\Publics.php(64): view('Public/HomePage', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Publics->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Publics))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-23 10:52:32 --> Unclosed '{' on line 29
+in APPPATH\Views\Public\HomePage.php on line 232.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Public/HomePage', [], true)
+ 3 APPPATH\Controllers\Publics.php(64): view('Public/HomePage', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Publics->index()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Publics))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

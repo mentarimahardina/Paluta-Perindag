@@ -38,6 +38,7 @@ function main($page)
     $data['setting_subtitle'] = settingValues('sub_title');
     $data['setting_logo'] = settingValues('logo');
     $data['setting_sublogo'] = settingValues('sub_logo');
+    $data['setting_fotokantor'] = settingValues('kantor_foto');
     $data['setting_alamat'] = settingValues('address');
     $data['setting_telp'] = settingValues('telp');
     $data['setting_email'] = settingValues('email');

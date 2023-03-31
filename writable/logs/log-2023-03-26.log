@@ -1,0 +1,12 @@
+CRITICAL - 2023-03-26 02:12:07 --> Undefined array key "photo"
+in APPPATH\Views\Public\HomePage.php on line 60.
+ 1 APPPATH\Views\Public\HomePage.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "photo"', 'APPPATH\\Views\\Public\\HomePage.php', 60)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Public\\HomePage.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Public/HomePage', [], true)
+ 5 APPPATH\Controllers\Publics.php(65): view('Public/HomePage', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): App\Controllers\Publics->index()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Publics))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

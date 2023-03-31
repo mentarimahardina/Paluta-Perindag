@@ -10,6 +10,7 @@ use App\Models\ModelMTags;
 use App\Models\ModelOrganization;
 use App\Models\ModelPosts;
 use App\Models\ModelProduk;
+use App\Models\ModelProdukPrice;
 use App\Models\ModelQuestion;
 use App\Models\ModelQuestionGroupIP;
 use App\Models\ModelSetting;
@@ -251,7 +252,7 @@ class Page extends Controller
     public function wisata()
     {
         try {
-            $data = sessions('Wisata');
+            $data = sessions('Produk');
             if ($data == null) {
                 out();
                 return redirect()->to('/login');
@@ -260,6 +261,70 @@ class Page extends Controller
                 $data['data'] = $model->orderBy('created_at', 'DESC')->findAll();
                 // $data['data'] = $model->orderBy('id', 'DESC')->findAll();
                 return view('Admin/produk', $data);
+            }
+        } catch (\Throwable $th) {
+            logsm($th);
+        }
+    }
+
+    public function produk()
+    {
+        try {
+            $data = sessions('Produk');
+            if ($data == null) {
+                out();
+                return redirect()->to('/login');
+            } else {
+                $model = new ModelProdukPrice();
+                $data['data'] = $model->where('idProduk', $_POST['id'])->orderBy('id', 'DESC')->findAll();
+                $modelproduk = new modelproduk();
+                $data['produk'] = $modelproduk->where('id', $_POST['id'])->first();
+                $data['termurah'] = $data['data']?$model->where('idProduk', $_POST['id'])->orderBy('price', 'ASC')->first()['price']:'0';
+                $data['termahal'] = $data['data']?$model->where('idProduk', $_POST['id'])->orderBy('price', 'DESC')->first()['price']:'0';
+                $data['terkini'] = $data['data']?$model->where('idProduk', $_POST['id'])->orderBy('id', 'desc')->first()['price']:'0';
+                
+                $qty = 0;
+                $jumlah = 0;
+                for ($i=0; $i < count($data['data']); $i++) { 
+                $jumlah =  $data['data'][$i]['price']+$jumlah;
+                $qty =  $i+$qty;
+
+                }
+                $data['rata'] =$qty!=0? $jumlah/$qty:0;
+                return view('Admin/produkprice', $data);
+
+            }
+        } catch (\Throwable $th) {
+            logsm($th);
+        }
+    }
+
+    public function bahan()
+    {
+        try {
+            $data = sessions('Produk');
+            if ($data == null) {
+                out();
+                return redirect()->to('/login');
+            } else {
+                $model = new ModelProdukPrice();
+                $data['data'] = $model->where('idProduk', $_POST['id'])->orderBy('id', 'DESC')->findAll();
+                $modelproduk = new modelproduk();
+                $data['produk'] = $modelproduk->where('id', $_POST['id'])->first();
+                $data['termurah'] = $model->where('idProduk', $_POST['id'])->orderBy('price', 'ASC')->find();
+                $data['termahal'] = $model->where('idProduk', $_POST['id'])->orderBy('price', 'DESC')->find();
+                $qty = 0;
+                $jumlah = 0;
+                for ($i=0; $i < count($data['data']); $i++) { 
+                $jumlah =  $data['data'][$i]['price']+$jumlah;
+                $qty =  $i+$qty;
+
+                }
+                $data['rata'] = $jumlah/$qty;
+                $data['terkini'] = $model->where('idProduk', $_POST['id'])->orderBy('id', 'desc')->find();
+                return view('Admin/produkprice', $data);
+                // echo $id;
+
             }
         } catch (\Throwable $th) {
             logsm($th);
